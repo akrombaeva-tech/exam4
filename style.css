@@ -3,9 +3,18 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+html {
+  scroll-behavior: smooth;
+}
 .container {
   width: 1400px;
   margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 body html {
@@ -82,16 +91,14 @@ header {
 .hero__wrapper {
   display: flex;
   justify-content: space-between;
-
+  margin-top: 200px;
+  align-items: center;
 }
 .hero__img {
   border-radius: 7px;
   margin-right: 100px;
   background-color: white;
   width: 400px;
-}
-.hero__wrap {
-  margin-top: 80px;
 }
 span {
   color: rgba(255, 166, 0, 0.863);
@@ -100,6 +107,7 @@ span {
   font-size: 40px;
   color: rgba(0, 0, 255, 0.716);
   text-align: center;
+  margin-top: 300px;
 }
 .div {
   margin-top: 70px;
@@ -113,6 +121,7 @@ span {
   justify-content: space-between;
   margin-right: 150px;
   align-items: center;
+  margin-top: 50px;
 }
 .div__title {
   margin-bottom: 20px;
@@ -532,7 +541,7 @@ main {
   transform: scale(1.1);
 }
 
-/* From Uiverse.io by wilsondesouza */
+/* From Uiverse.io by wilsondesouza */ 
 ul {
   list-style: none;
 }
@@ -603,14 +612,14 @@ ul {
   height: 100%;
 }
 
-.example-2 .icon-content a[data-social="linkedin"] .filled,
-.example-2 .icon-content a[data-social="linkedin"] ~ .tooltip {
-  background-color: #0274b3;
+.example-2 .icon-content a[data-social="whatsapp"] .filled,
+.example-2 .icon-content a[data-social="whatsapp"] ~ .tooltip {
+  background-color: #128c7e;
 }
 
-.example-2 .icon-content a[data-social="github"] .filled,
-.example-2 .icon-content a[data-social="github"] ~ .tooltip {
-  background-color: #24262a;
+.example-2 .icon-content a[data-social="facebook"] .filled,
+.example-2 .icon-content a[data-social="facebook"] ~ .tooltip {
+  background-color: #3b5998;
 }
 .example-2 .icon-content a[data-social="instagram"] .filled,
 .example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
@@ -629,8 +638,10 @@ ul {
   background-color: #ff0000;
 }
 
+
+
 /* From Uiverse.io by javierBarroso */
-/* From Uiverse.io by javierBarroso */ 
+/* From Uiverse.io by javierBarroso */
 
 .muslima .card {
   width: 290px;
@@ -659,7 +670,7 @@ ul {
   align-items: center;
   position: relative;
   bottom: 0;
-  background-image: url('./images/photo_5391152983166357684_y.jpg');
+  background-image: url("./images/photo_5391152983166357684_y.jpg");
   background-position: center;
   background-size: cover;
 }
@@ -751,8 +762,7 @@ ul {
   }
 }
 
-
-.grade__info{
+.grade__info {
   font-size: 20px;
   margin-top: 20px;
 }
