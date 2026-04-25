@@ -1,76 +1,758 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-.container{
-    width: 1400px;
-    margin: 0 auto;
-}
-.nav__wrapper{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.container {
+  width: 1400px;
+  margin: 0 auto;
 }
 
-.nav__wrap{
-    display: flex;
-    align-items: center;
+body html {
+  height: 100%;
 }
-.btn{
-    padding: 15px 35px;
-    border-radius: 10px;
-    border: none;
-    margin-right: 100px;
-    background-color: rgba(0, 0, 255, 0.622);
-    color: white;
+
+header {
+  position: relative;
+  z-index: 21;
 }
-.nav{
-    margin-top: 20px;
+
+.video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
-.nav__icon{
-    padding-right: 100px;
-    width: 200px;
+
+.nav__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
 }
-.hero__name{
-    font-size: 50px;
-   margin-bottom: 20px;
+
+.nav__wrap {
+  display: flex;
+  align-items: center;
 }
-.hero__info{
-    font-size: 24px;
-    margin-bottom: 25px;
-    transition: .05s ease-in-out;
+
+.btn {
+  padding: 15px 45px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgba(0, 0, 255, 0.651);
+  color: #fff;
+  margin-right: 100px;
+  transition: 0.6s ease-in-out;
 }
-.hero__info:hover{
-   color:red;
+.btn:hover {
+  background: linear-gradient(to right, blue, purple);
 }
-.btn{
-    padding: 12px 45px;
-    border: none;
-    border-radius: 8px;
-    transition: 0.4s ease-in-out;
+
+.nav {
+  position: fixed;
+  z-index: 1;
+  justify-content: center;
+  background-color: white;
+  top: -10px;
+  padding: 20px 100px;
 }
-.btn:hover{
-    transform: scale(1.1);
-    background: linear-gradient(to right,red,orange,yellow);
-    box-shadow: 5px 5px 8px orange;
+.nav__icon {
+  padding-right: 100px;
+  width: 200px;
 }
-.hero{
-    margin-top: 80px;
+.hero__name {
+  font-size: 50px;
+  margin-bottom: 20px;
 }
-.hero__wrapper{
-    display: flex;
-    justify-content: space-between;
+.hero__info {
+  font-size: 24px;
+  margin-bottom: 25px;
+  color: #fff;
 }
-.hero__img{
-    border-radius: 7px;
-    margin-right: 100px;
-    background-color: white;
-    transition: 5s linear;
+.hero {
+  margin-top: 100px;
 }
-.hero__wrap{
-    margin-top: 80px;
+.hero__name {
+  color: #fff;
 }
-span{
-    color: rgba(255, 166, 0, 0.922);
+.hero__wrapper {
+  display: flex;
+  justify-content: space-between;
+
+}
+.hero__img {
+  border-radius: 7px;
+  margin-right: 100px;
+  background-color: white;
+  width: 400px;
+}
+.hero__wrap {
+  margin-top: 80px;
+}
+span {
+  color: rgba(255, 166, 0, 0.863);
+}
+.div__name {
+  font-size: 40px;
+  color: rgba(0, 0, 255, 0.716);
+  text-align: center;
+}
+.div {
+  margin-top: 70px;
+}
+.div__info {
+  font-size: 25px;
+  color: #fff;
+}
+.div__wrap {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 150px;
+  align-items: center;
+}
+.div__title {
+  margin-bottom: 20px;
+  color: rgba(0, 0, 255, 0.771);
+}
+.div__img {
+  border-radius: 20px;
+  transition: 0.4s ease-in-out;
+  width: 300px;
+}
+.div__img:hover {
+  transform: scale(1.1);
+}
+
+.family-section {
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+}
+
+/* 4 ta karta uchun gridni moslash */
+.family-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 40px auto;
+}
+
+.family-card {
+  height: 380px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+/* 1. AG'DARILISH (FLIP) EFFEKTI */
+.family-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* 2. FOCUS EFFEKTI: Qolganlarni xiralashtirish va qoraytirish */
+.family-grid:hover .family-card:not(:hover) {
+  filter: blur(8px) brightness(0.4);
+  transform: scale(0.95);
+  opacity: 0.6;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Old tomoni */
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tag {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: #6c5ce7;
+  color: white;
+  padding: 6px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.card-back {
+  background: #6c5ce7;
+  color: #ffffff;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  text-align: center;
+}
+
+.card-back h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.card-back p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.group {
+  min-height: 100vh;
+  padding-block: 50px;
+}
+
+#group .group-title {
+  margin-block: 0 50px;
+  font-size: 42px;
+  font-weight: 600;
+  color: rgba(0, 0, 255, 0.729);
+  line-height: 1.2;
+  text-align: center;
+  margin-top: 100px;
+}
+
+#group .slider-input {
+  display: none;
+}
+
+#group .group-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 600px;
+  width: 100%;
+  max-height: 600px;
+  height: 100%;
+  margin-bottom: 100px;
+  margin-inline: auto;
+  transform-style: preserve-3d;
+}
+
+#group .cards {
+  position: relative;
+  width: 430px;
+  height: 500px;
+  margin-bottom: 20px;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+#group .cards label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 430px;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+
+#group .card {
+  position: relative;
+  height: 100%;
+  padding: 30px 35px;
+  background-color: #071c38;
+  border-radius: 10px;
+}
+
+#group .image-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+#group .card-pic {
+  width: 86%;
+  height: 220px;
+  margin-top: 23px;
+  border-radius: 5px;
+  box-shadow: 15px 15px 40px rgba(0, 0, 0, 50%);
+  object-fit: cover;
+  transition: transform 0.3s linear;
+}
+
+#group .card-pic:hover {
+  transform: scale(1.05);
+}
+
+/* LEFT FAR */
+#s1:checked ~ .cards #slide4,
+#s2:checked ~ .cards #slide5,
+#s3:checked ~ .cards #slide6,
+#s4:checked ~ .cards #slide1,
+#s5:checked ~ .cards #slide2,
+#s6:checked ~ .cards #slide3 {
+  transform: translate3d(-70%, 0, -220px);
+}
+
+/* LEFT NEAR */
+#s1:checked ~ .cards #slide5,
+#s2:checked ~ .cards #slide6,
+#s3:checked ~ .cards #slide1,
+#s4:checked ~ .cards #slide2,
+#s5:checked ~ .cards #slide3,
+#s6:checked ~ .cards #slide4 {
+  transform: translate3d(-35%, 0, -120px);
+}
+
+/* CENTER */
+#s1:checked ~ .cards #slide6,
+#s2:checked ~ .cards #slide1,
+#s3:checked ~ .cards #slide2,
+#s4:checked ~ .cards #slide3,
+#s5:checked ~ .cards #slide4,
+#s6:checked ~ .cards #slide5 {
+  transform: translate3d(0, 0, 0);
+  z-index: 2;
+}
+
+/* RIGHT NEAR */
+#s1:checked ~ .cards #slide1,
+#s2:checked ~ .cards #slide2,
+#s3:checked ~ .cards #slide3,
+#s4:checked ~ .cards #slide4,
+#s5:checked ~ .cards #slide5,
+#s6:checked ~ .cards #slide6 {
+  transform: translate3d(35%, 0, -120px);
+}
+
+/* RIGHT FAR */
+#s1:checked ~ .cards #slide2,
+#s2:checked ~ .cards #slide3,
+#s3:checked ~ .cards #slide4,
+#s4:checked ~ .cards #slide5,
+#s5:checked ~ .cards #slide6,
+#s6:checked ~ .cards #slide1 {
+  transform: translate3d(70%, 0, -220px);
+}
+
+.project {
+  min-height: 100vh;
+  padding-block: 50px;
+}
+
+.project-title {
+  margin-block: 0 40px;
+  font-size: 42px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 10px;
+  padding-left: 0;
+  list-style-type: none;
+}
+
+.list:hover .item:not(:hover) {
+  filter: grayscale(1) blur(10px);
+}
+
+.item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  cursor: pointer;
+  transition:
+    filter 0.4s linear,
+    transform 0.4s linear,
+    box-shadow 0.4s linear;
+}
+
+.item:hover {
+  transform: scale(1.08);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+.pic {
+  width: 230px;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.caption {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.4s linear;
+}
+
+.item:hover .caption {
+  transform: translateY(60%);
+}
+
+.maain__name {
+  color: rgba(0, 0, 255, 0.871);
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.maain {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.maain__project {
+  position: relative;
+  width: 250px;
+  height: 320px;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: 0.4s;
+}
+
+.maain__project img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+.maain__project::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transition: 0.4s;
+  z-index: 1;
+}
+
+.content {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  color: black;
+  z-index: 2;
+  transition: 0.4s;
+}
+
+.maain:hover .project {
+  transform: scale(0.9);
+  filter: brightness(0.7);
+}
+
+.maain .maain__project:hover {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.maain .maain__project:hover::before {
+  opacity: 1;
+}
+
+.maain .maain__project:hover .content {
+  bottom: 0;
+}
+
+.maain .maain__project:hover img {
+  transform: scale(1.1);
+}
+main {
+  margin-bottom: 150px;
+}
+.footer {
+  background-color: #071c38;
+  color: white;
+  padding-bottom: 100px;
+}
+.footer__name {
+  text-align: center;
+  padding-top: 50px;
+  font-size: 40px;
+}
+.footer__wrap {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding-top: 30px;
+}
+.footer__icon {
+  border-radius: 100%;
+  width: 70px;
+  border: none;
+  transition: 0.4s ease-in-out;
+}
+.footer__icon:hover {
+  transform: scale(1.1);
+}
+.footer__div {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding-top: 50px;
+  align-items: center;
+}
+.footer__info {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.footer__team {
+  transition: 0.4s ease-in-out;
+}
+.footer__team:hover {
+  transform: scale(1.1);
+}
+
+/* From Uiverse.io by wilsondesouza */
+ul {
+  list-style: none;
+}
+
+.example-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.example-2 .icon-content {
+  margin: 0 10px;
+  position: relative;
+}
+.example-2 .icon-content .tooltip {
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+.example-2 .icon-content:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -50px;
+}
+.example-2 .icon-content a {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #4d4d4d;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+.example-2 .icon-content a:hover {
+  box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
+}
+.example-2 .icon-content a svg {
+  position: relative;
+  z-index: 1;
+  width: 30px;
+  height: 30px;
+}
+.example-2 .icon-content a:hover {
+  color: white;
+}
+.example-2 .icon-content a .filled {
+  position: absolute;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+}
+.example-2 .icon-content a:hover .filled {
+  height: 100%;
+}
+
+.example-2 .icon-content a[data-social="linkedin"] .filled,
+.example-2 .icon-content a[data-social="linkedin"] ~ .tooltip {
+  background-color: #0274b3;
+}
+
+.example-2 .icon-content a[data-social="github"] .filled,
+.example-2 .icon-content a[data-social="github"] ~ .tooltip {
+  background-color: #24262a;
+}
+.example-2 .icon-content a[data-social="instagram"] .filled,
+.example-2 .icon-content a[data-social="instagram"] ~ .tooltip {
+  background: linear-gradient(
+    45deg,
+    #405de6,
+    #5b51db,
+    #b33ab4,
+    #c135b4,
+    #e1306c,
+    #fd1f1f
+  );
+}
+.example-2 .icon-content a[data-social="youtube"] .filled,
+.example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
+  background-color: #ff0000;
+}
+
+/* From Uiverse.io by javierBarroso */
+/* From Uiverse.io by javierBarroso */ 
+
+.muslima .card {
+  width: 290px;
+  height: 354px;
+  background: #171717;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 3px 1px #00000088;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.muslima .card .content {
+  border-radius: 10px;
+  background: #171717;
+  width: 286px;
+  height: 350px;
+  z-index: 1;
+  padding: 20px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  bottom: 0;
+  background-image: url('./images/photo_5391152983166357684_y.jpg');
+  background-position: center;
+  background-size: cover;
+}
+
+.muslima .content::before {
+  opacity: 0;
+  transition: opacity 300ms;
+  content: " ";
+  display: block;
+  background: #fff5;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  filter: blur(50px);
+}
+
+.muslima .card:hover .content::before {
+  opacity: 1;
+}
+
+.muslima .card::before {
+  opacity: 1;
+  content: "";
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 300px;
+  transform: rotate(0deg) translateY(50%);
+  background: linear-gradient(90deg, #ff2288, transparent);
+  transition: opacity 300ms;
+  animation: rotation_9018 3000ms infinite linear;
+  animation-play-state: paused;
+}
+.muslima .card::after {
+  opacity: 1;
+  content: "";
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 300px;
+  transform: rotate(0deg) translateY(-50%);
+  background: linear-gradient(90deg, transparent, #2268ff);
+  transition: opacity 300ms;
+  animation: rotation_9019 3000ms infinite linear;
+  animation-play-state: paused;
+}
+
+.muslima .card:hover::before {
+  opacity: 1;
+  animation-play-state: running;
+}
+.muslima .card:hover::after {
+  opacity: 1;
+  animation-play-state: running;
+}
+
+.muslima .card:hover .glass {
+  opacity: 0;
+}
+
+.muslima .glass {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 190px;
+  height: 254px;
+  background: #17171733;
+  backdrop-filter: blur(50px);
+  z-index: 1;
+  transition-duration: 0.5s;
+}
+
+@keyframes rotation_9018 {
+  0% {
+    transform: rotate(0deg) translateY(50%);
+  }
+
+  100% {
+    transform: rotate(360deg) translateY(50%);
+  }
+}
+@keyframes rotation_9019 {
+  0% {
+    transform: rotate(0deg) translateY(-50%);
+  }
+
+  100% {
+    transform: rotate(360deg) translateY(-50%);
+  }
+}
+
+
+.grade__info{
+  font-size: 20px;
+  margin-top: 20px;
 }
