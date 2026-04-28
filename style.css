@@ -107,10 +107,9 @@ span {
   font-size: 40px;
   color: rgba(0, 0, 255, 0.716);
   text-align: center;
-  margin-top: 300px;
 }
 .div {
-  margin-top: 200px;
+  padding-top: 110px;
 }
 .div__info {
   font-size: 25px;
@@ -138,6 +137,7 @@ span {
 
 .family-section {
   padding: 60px 20px;
+  padding-top: 110px;
   text-align: center;
   color: white;
 }
@@ -230,7 +230,7 @@ span {
 
 .group {
   min-height: 100vh;
-  padding-block: 50px;
+  padding-top: 50px;
 }
 
 #group .group-title {
@@ -360,7 +360,7 @@ span {
 
 .project {
   min-height: 100vh;
-  padding-block: 50px;
+  padding-top: 50px;
 }
 
 .project-title {
@@ -497,6 +497,9 @@ span {
 }
 main {
   margin-bottom: 150px;
+}
+.main{
+  padding-top: 110px;
 }
 .footer {
   background-color: #071c38;
@@ -767,3 +770,36 @@ ul {
   font-size: 20px;
   margin-top: 20px;
 }
+.v3 {
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  overflow: hidden;
+}
+
+.layer {
+  position: absolute;
+  inset: -50%;
+  background-repeat: repeat;
+  border-radius: 50%;
+}
+
+.layer1 { animation: drift1 60s linear infinite; }
+.layer2 { animation: drift2 90s linear infinite; opacity: 0.7; }
+.layer3 { animation: drift3 120s linear infinite; opacity: 0.4; }
+
+@keyframes drift1 { from { transform: rotate(0deg) translateY(-10px); } to { transform: rotate(360deg) translateY(-10px); } }
+@keyframes drift2 { from { transform: rotate(0deg) translateX(15px); } to { transform: rotate(-360deg) translateX(15px); } }
+@keyframes drift3 { from { transform: rotate(45deg) translateY(5px); } to { transform: rotate(405deg) translateY(5px); } }
+
+.v3-nebula {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  animation: pulse3 8s ease-in-out infinite alternate;
+}
+
+@keyframes pulse3 {
+  0%   { opacity: 0.08; transform: scale(1); }
+  100% { opacity: 0.18; transform: scale(1.2); }
+}   
