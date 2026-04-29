@@ -85,6 +85,7 @@ header {
 
     /* Shadow */
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    border: none;
 }
 .nav__icon {
   padding-right: 100px;
