@@ -66,9 +66,25 @@ header {
   justify-content: center;
   top: -10px;
   padding: 20px 100px;
-   background: rgba(10, 30, 80, 0.25);
-  backdrop-filter: blur(15px);
-   box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 40px;
+    z-index: 1000;
+
+    /* Background ga mos */
+    background: rgba(0, 0, 0, 0.35);
+
+    /* Blur effect */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    /* Border */
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+
+    /* Shadow */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 .nav__icon {
   padding-right: 100px;
