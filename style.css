@@ -43,9 +43,8 @@ header {
   margin-top: 20px;
 }
 
-.nav__wrap {
-  display: flex;
-  align-items: center;
+.nav__name{
+  color: white;
 }
 
 .btn {
@@ -65,9 +64,11 @@ header {
   position: fixed;
   z-index: 1;
   justify-content: center;
-  background-color: white;
   top: -10px;
   padding: 20px 100px;
+   background: rgba(10, 30, 80, 0.25);
+  backdrop-filter: blur(15px);
+   box-shadow: 0 8px 32px rgba(0,0,0,0.2);
 }
 .nav__icon {
   padding-right: 100px;
