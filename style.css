@@ -43,7 +43,7 @@ header {
   margin-top: 20px;
 }
 
-.nav__name{
+.nav__name {
   color: white;
 }
 
@@ -59,33 +59,26 @@ header {
 .btn:hover {
   background: linear-gradient(to right, blue, purple);
 }
-
 .nav {
   position: fixed;
-  z-index: 1;
-  justify-content: center;
-  top: -10px;
-  padding: 20px 100px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 20px 40px;
-    z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 15px 40px;
 
-    /* Background ga mos */
-    background: rgba(0, 0, 0, 0.35);
+  /* Lighter background */
+  background: rgba(255, 255, 255, 0.08);
 
-    /* Blur effect */
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+  /* Softer blur */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 
-    /* Border */
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+  /* Subtle border */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 
-    /* Shadow */
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    border: none;
+  /* Softer shadow */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 .nav__icon {
   padding-right: 100px;
@@ -516,7 +509,7 @@ span {
 main {
   margin-bottom: 150px;
 }
-.main{
+.main {
   padding-top: 110px;
 }
 .footer {
@@ -563,7 +556,7 @@ main {
   transform: scale(1.1);
 }
 
-/* From Uiverse.io by wilsondesouza */ 
+/* From Uiverse.io by wilsondesouza */
 ul {
   list-style: none;
 }
@@ -659,8 +652,6 @@ ul {
 .example-2 .icon-content a[data-social="youtube"] ~ .tooltip {
   background-color: #ff0000;
 }
-
-
 
 /* From Uiverse.io by javierBarroso */
 /* From Uiverse.io by javierBarroso */
@@ -802,13 +793,42 @@ ul {
   border-radius: 50%;
 }
 
-.layer1 { animation: drift1 60s linear infinite; }
-.layer2 { animation: drift2 90s linear infinite; opacity: 0.7; }
-.layer3 { animation: drift3 120s linear infinite; opacity: 0.4; }
+.layer1 {
+  animation: drift1 60s linear infinite;
+}
+.layer2 {
+  animation: drift2 90s linear infinite;
+  opacity: 0.7;
+}
+.layer3 {
+  animation: drift3 120s linear infinite;
+  opacity: 0.4;
+}
 
-@keyframes drift1 { from { transform: rotate(0deg) translateY(-10px); } to { transform: rotate(360deg) translateY(-10px); } }
-@keyframes drift2 { from { transform: rotate(0deg) translateX(15px); } to { transform: rotate(-360deg) translateX(15px); } }
-@keyframes drift3 { from { transform: rotate(45deg) translateY(5px); } to { transform: rotate(405deg) translateY(5px); } }
+@keyframes drift1 {
+  from {
+    transform: rotate(0deg) translateY(-10px);
+  }
+  to {
+    transform: rotate(360deg) translateY(-10px);
+  }
+}
+@keyframes drift2 {
+  from {
+    transform: rotate(0deg) translateX(15px);
+  }
+  to {
+    transform: rotate(-360deg) translateX(15px);
+  }
+}
+@keyframes drift3 {
+  from {
+    transform: rotate(45deg) translateY(5px);
+  }
+  to {
+    transform: rotate(405deg) translateY(5px);
+  }
+}
 
 .v3-nebula {
   position: absolute;
@@ -818,6 +838,12 @@ ul {
 }
 
 @keyframes pulse3 {
-  0%   { opacity: 0.08; transform: scale(1); }
-  100% { opacity: 0.18; transform: scale(1.2); }
-}   
+  0% {
+    opacity: 0.08;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.18;
+    transform: scale(1.2);
+  }
+}
