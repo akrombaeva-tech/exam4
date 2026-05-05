@@ -42,10 +42,15 @@ header {
   justify-content: space-between;
   margin-top: 20px;
 }
-
 .nav__name {
   color: white;
 }
+
+.nav__rotate{
+  display: flex;
+  gap: 40px;
+}
+
 
 .btn {
   padding: 15px 45px;
@@ -53,7 +58,6 @@ header {
   border: none;
   background-color: rgba(0, 0, 255, 0.651);
   color: #fff;
-  margin-right: 100px;
   transition: 0.6s ease-in-out;
 }
 .btn:hover {
